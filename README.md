@@ -27,31 +27,36 @@ The entire program was done using the following software tool(s)/language(s):
 
 
 ## Problem Definition:
-
 ### Task 1
-i) Create an interface to upload a fasta file
-ii) Once uploaded, validate the file with the following checks:
-a) The information line starts with a ‘>’ symbol only.
-b) The information is contained in one single line and is not continued to the next line.
-c) There is no blank line between information line and gene sequence.
-d) The gene sequence contains only 4 characters ‘A’, ‘T’, ‘G’ and ‘C’.
-iii) If validated, display the file contents in a format in ‘Output file’.
+1. Create an interface to upload a fasta file
+2. Once uploaded, validate the file with the following checks:
+    - The information line starts with a ‘>’ symbol only.
+    - The information is contained in one single line and is not continued to the next line.
+    - There is no blank line between information line and gene sequence.
+    - The gene sequence contains only 4 characters ‘A’, ‘T’, ‘G’ and ‘C’.
+3. If validated, display the file contents in a format in ‘Output file’.
 
 ### Task 2
-i) Connect your GUI to database
-ii) Information that should be contained in the database are: Sl_No, Gene Information, Gene sequence, Count_A, Count_T, Count_G, Count_C, length, (G+C)%.
-where, (G+C)% is calculated as: (G+C)% = (Count_G + Count_C) / (Count_A + Count_T + Count_G + Count_C)*100
+1. Connect your GUI to database
+2. Information that should be contained in the database are: Sl_No, Gene Information, Gene sequence, Count_A, Count_T, Count_G, Count_C, length, (G+C)%.
+
+    where, (G+C)% is calculated as: (G+C)% = (Count_G + Count_C) / (Count_A + Count_T + Count_G + Count_C)*100
 
 ### Task 3
 Along with these 9 fields, add all those fields given in Gene Detail List to the database
+
 Checks: If the location field of a gene in a gene sequence file contains:
-a) 1798...1800, 1919…2020
-If there is a comma separating locations, it means the gene is joined from two segments, you can ignore this gene and do not add it to your database.
-b) c1666…17000
-Here ‘c’ means, the gene is present in the complementary strand. So any location starting with ‘c’ will be stored as 17000…1666 ( in the  reverse order) in the Gene Detail List. So while checking the location, please check it in the reverse order in the Gene Detail List.
+1. 1798...1800, 1919…2020
+
+    If there is a comma separating locations, it means the gene is joined from two segments, you can ignore this gene and do not add it to your database.
+
+2. c1666…17000
+
+    Here ‘c’ means, the gene is present in the complementary strand. So any location starting with ‘c’ will be stored as 17000…1666 ( in the  reverse order) in the Gene Detail List. So while checking the location, please check it in the reverse order in the Gene Detail List.
 
 ### Task 4
 Convert the gene sequence into protein sequence.
+
 Checks: If any stop codon appears within a gene sequence, the generate a
 warning message stating “Stop codon found in gene gene_name”. Gene_name you will get from Task 3.
 
